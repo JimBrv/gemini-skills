@@ -17,6 +17,41 @@ This directory contains specialized skills for the Gemini CLI agent. Each skill 
 - **Risk Assessment:** Identifies "trap" specifications and assesses project continuity risks (e.g., vendor lock-in).
 - **Evidence Tracking:** Flags requirements for specific proof like screenshots or third-party reports.
 
+## Installation
+
+You can install these skills using the `gemini skills install` command.
+
+### From Local Directory
+
+If you have this repository cloned locally:
+
+```bash
+# Install Tender Analysis
+gemini skills install ./gemini-skills/tender-analysis
+
+# Install PDF & Image Analysis
+gemini skills install ./gemini-skills/pdf-image-analysis
+```
+
+To install specifically for the current workspace (project):
+```bash
+gemini skills install ./gemini-skills/tender-analysis --scope workspace
+```
+
+### From GitHub
+
+You can install skills directly from the remote repository without cloning:
+
+```bash
+# Replace <username/repo> with your actual GitHub repository path
+
+# Install Tender Analysis
+gemini skills install https://github.com/<username/repo>.git --path gemini-skills/tender-analysis
+
+# Install PDF & Image Analysis
+gemini skills install https://github.com/<username/repo>.git --path gemini-skills/pdf-image-analysis
+```
+
 ## Structure of a Skill
 
 Each skill directory typically contains:
@@ -25,4 +60,12 @@ Each skill directory typically contains:
 
 ## Usage
 
-To use a skill, you can ask the Gemini CLI to "Load [skill-name]" or simply provide the relevant files and request the specific analysis (e.g., "Analyze this tender document using the tender-analysis skill").
+Once installed, you can activate a skill by name or by context.
+
+**Example:**
+> "Analyze this tender document using the tender-analysis skill."
+
+To view all installed skills:
+```bash
+gemini skills list
+```
