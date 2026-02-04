@@ -4,13 +4,19 @@ This directory contains specialized skills for the Gemini CLI agent. Each skill 
 
 ## Available Skills
 
-### 1. [PDF and Image Analysis](./pdf-image-analysis)
+### 1. [Deep Research Synthesis](./deep-research-synthesis)
+**Purpose:** Autonomous, multi-step research on complex topics, combining the reasoning of OpenAI's Deep Research with the citation rigor of Perplexity.
+- **Iterative Planning:** Clarifies ambiguous queries and builds a structured research roadmap.
+- **Deep Context Loading:** Ingests full documents/webpages rather than short snippets for cross-doc analysis.
+- **Strict Grounding:** Produces professional reports with sentence-level citations.
+
+### 2. [PDF and Image Analysis](./pdf-image-analysis)
 **Purpose:** Deep analysis of technical documentation, network topologies, and security architecture diagrams.
 - **Text & Object Recognition:** Extracts text and identifies visual elements/icons.
 - **Hierarchical Description:** Breaks down complex layouts into logical zones (e.g., Enterprise Zone, Internet Zone).
 - **Relationship Mapping:** Describes data flow, protection logic, and spatial relationships between components.
 
-### 2. [Tender Analysis](./tender-analysis)
+### 3. [Tender Analysis](./tender-analysis)
 **Purpose:** Specialized assistance for sales engineers to analyze tender documents and perform gap analysis against product specifications.
 - **Multi-format Support:** Processes PDF, Word, Images, and Excel (auto-converted to images for visual consistency).
 - **Compliance Matrix:** Generates strict line-by-line comparisons between requirements and product capabilities.
@@ -26,6 +32,9 @@ You can install these skills using the `gemini skills install` command.
 If you have this repository cloned locally:
 
 ```bash
+# Install Deep Research Synthesis
+gemini skills install ./gemini-skills/deep-research-synthesis
+
 # Install Tender Analysis
 gemini skills install ./gemini-skills/tender-analysis
 
@@ -35,7 +44,7 @@ gemini skills install ./gemini-skills/pdf-image-analysis
 
 To install specifically for the current workspace (project):
 ```bash
-gemini skills install ./gemini-skills/tender-analysis --scope workspace
+gemini skills install ./gemini-skills/deep-research-synthesis --scope workspace
 ```
 
 ### From GitHub
@@ -44,6 +53,9 @@ You can install skills directly from the remote repository without cloning:
 
 ```bash
 # Replace <username/repo> with your actual GitHub repository path
+
+# Install Deep Research Synthesis
+gemini skills install https://github.com/<username/repo>.git --path gemini-skills/deep-research-synthesis
 
 # Install Tender Analysis
 gemini skills install https://github.com/<username/repo>.git --path gemini-skills/tender-analysis

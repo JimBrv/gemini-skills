@@ -28,5 +28,11 @@ When this skill is activated:
     *   **Protection & Management**: Identify which components protect or manage others (e.g., "The WAF protects the web server pool," "The management zone controls all edge devices").
     *   **Spatial/Hierarchical**: Describe containment relationships and logical boundaries.
 
+4.  **Documentation & Output Phase**:
+    *   **User Prompt**: After completing the analysis, EXPLICITLY ask the user: "Would you like me to generate a DOCX report for this analysis?"
+    *   **Merged Report Generation**: If the user approves, you MUST generate **ONE** DOCX file that includes both formats:
+        1.  **Section 1: Detailed Narrative**: A narrative-style section containing the full detailed analysis from phases 2 & 3, formatted with proper headings and paragraphs.
+        2.  **Section 2: Structured Summary Table**: A structured table summarizing the findings, **grouped by logical categories** (e.g., Zone -> Sub-region -> Components). Ensure the table aggregates components effectively by their location and function.
+
 ## Usage
 Use this skill for deep analysis of technical documentation, especially network topologies, security architecture diagrams, or any complex layout where components' functional relationships and positioning are critical.
